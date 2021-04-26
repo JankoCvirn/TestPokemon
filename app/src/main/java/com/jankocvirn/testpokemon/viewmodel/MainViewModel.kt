@@ -31,6 +31,7 @@ class MainViewModel(
         scope.launch(handler) {
             val pokemon = repository.getPokemon(randomPokemonId())
             withContext(Dispatchers.Main) {
+                _progressObservable.value = false
                 if (pokemon != null) {
                     _pokemonObservable.value = pokemon
                 } else {

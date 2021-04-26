@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TestPokemon</string>
+    <string name="general_error">Ooops something went wrong.</string>
 </resources>
