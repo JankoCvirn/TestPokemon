@@ -65,6 +65,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupListeners() {
-
+        binding.fabReload.setOnClickListener {
+            viewModel.start()
+        }
     }
 }
