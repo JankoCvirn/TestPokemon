@@ -80,6 +80,7 @@
                     android:gravity="center"
                     android:text="@string/moves"
                     android:textSize="20dp"
+                    android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/img_back" />
@@ -102,6 +103,7 @@
                     android:gravity="center"
                     android:text="@string/stats"
                     android:textSize="20dp"
+                    android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/recycler_moves" />

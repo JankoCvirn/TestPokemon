@@ -7,8 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.jankocvirn.testpokemon.databinding.ItemMoveBinding
 import com.jankocvirn.testpokemon.model.pokemon.Stat
 
-class StatsAdapter(
-) : RecyclerView.Adapter<StatsAdapter.SeasonViewHolder>() {
+class StatsAdapter : RecyclerView.Adapter<StatsAdapter.SeasonViewHolder>() {
 
     private val items = arrayListOf<Stat>()
 
@@ -32,7 +31,8 @@ class StatsAdapter(
         holder.bind(item = items[position])
     }
 
-    class SeasonViewHolder(val binding: ItemMoveBinding) : RecyclerView.ViewHolder(binding.root) {
+    class SeasonViewHolder(private val binding: ItemMoveBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Stat) {
             binding.txtMove.text = item.name
         }

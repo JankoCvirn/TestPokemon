@@ -5,11 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.jankocvirn.testpokemon.databinding.ItemMoveBinding
-import com.jankocvirn.testpokemon.extensions.loadImage
 import com.jankocvirn.testpokemon.model.pokemon.Move
 
-class ItemAdapter(
-) : RecyclerView.Adapter<ItemAdapter.SeasonViewHolder>() {
+class ItemAdapter : RecyclerView.Adapter<ItemAdapter.SeasonViewHolder>() {
 
     private val items = arrayListOf<Move>()
 
@@ -33,7 +31,8 @@ class ItemAdapter(
         holder.bind(item = items[position])
     }
 
-    class SeasonViewHolder(val binding: ItemMoveBinding) : RecyclerView.ViewHolder(binding.root) {
+    class SeasonViewHolder(private val binding: ItemMoveBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Move) {
             binding.txtMove.text = item.name
         }

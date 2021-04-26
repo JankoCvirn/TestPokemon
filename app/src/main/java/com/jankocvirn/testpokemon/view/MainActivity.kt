@@ -75,12 +75,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun populateStats(list: List<Stat>) {
+        binding.lblStats.isVisible = true
         val adapter = StatsAdapter()
         adapter.setData(list)
         binding.recyclerStats.adapter = adapter
     }
 
     private fun populateMoves(list: List<Move>) {
+        binding.lblMoves.isVisible = true
         val adapter = ItemAdapter()
         adapter.setData(list)
         binding.recyclerMoves.adapter = adapter
