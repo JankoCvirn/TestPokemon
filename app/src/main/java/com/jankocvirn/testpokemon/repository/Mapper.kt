@@ -15,7 +15,7 @@ fun mapPokemon(response: PokemonResponse): Pokemon {
     )
 }
 
-private fun mapMoves(moves: List<PokemonResponse.Move?>?): List<Move?>? {
+private fun mapMoves(moves: List<PokemonResponse.Move?>?): List<Move> {
     val list = mutableListOf<Move>()
     moves?.forEach {
         list.add(
@@ -28,7 +28,7 @@ private fun mapMoves(moves: List<PokemonResponse.Move?>?): List<Move?>? {
     return list.toMutableList()
 }
 
-private fun mapStats(stats: List<PokemonResponse.Stat?>?): List<Stat?>? {
+private fun mapStats(stats: List<PokemonResponse.Stat?>?): List<Stat> {
     val list = mutableListOf<Stat>()
     stats?.forEach {
         list.add(

@@ -3,4 +3,6 @@
     <string name="general_error">Ooops something went wrong.</string>
     <string name="front_image">Front image</string>
     <string name="back_image">Back image</string>
+    <string name="moves">Moves</string>
+    <string name="stats">Stats</string>
 </resources>

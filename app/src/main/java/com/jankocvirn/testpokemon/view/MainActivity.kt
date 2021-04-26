@@ -7,7 +7,11 @@ import com.jankocvirn.testpokemon.R
 import com.jankocvirn.testpokemon.databinding.ActivityMainBinding
 import com.jankocvirn.testpokemon.extensions.loadImage
 import com.jankocvirn.testpokemon.extensions.toast
+import com.jankocvirn.testpokemon.model.pokemon.Move
 import com.jankocvirn.testpokemon.model.pokemon.Pokemon
+import com.jankocvirn.testpokemon.model.pokemon.Stat
+import com.jankocvirn.testpokemon.view.adapter.ItemAdapter
+import com.jankocvirn.testpokemon.view.adapter.StatsAdapter
 import com.jankocvirn.testpokemon.viewmodel.MainViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -62,6 +66,24 @@ class MainActivity : AppCompatActivity() {
         binding.txtName.text = pokemon.name
         binding.imgFront.loadImage(pokemon.frontImage)
         binding.imgBack.loadImage(pokemon.backImage)
+        pokemon.moves?.let {
+            populateMoves(it)
+        }
+        pokemon.stats?.let {
+            populateStats(it)
+        }
+    }
+
+    private fun populateStats(list: List<Stat>) {
+        val adapter = StatsAdapter()
+        adapter.setData(list)
+        binding.recyclerStats.adapter = adapter
+    }
+
+    private fun populateMoves(list: List<Move>) {
+        val adapter = ItemAdapter()
+        adapter.setData(list)
+        binding.recyclerMoves.adapter = adapter
     }
 
     private fun setupListeners() {

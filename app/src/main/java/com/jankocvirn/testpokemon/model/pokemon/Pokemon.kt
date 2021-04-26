@@ -4,8 +4,8 @@ data class Pokemon(
     val name: String,
     val frontImage: String,
     val backImage: String,
-    val stats: List<Stat?>?,
-    val moves: List<Move?>?,
+    val stats: List<Stat>?,
+    val moves: List<Move>?,
 )
 
 data class Stat(
