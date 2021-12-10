@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun observeViewModel() {
-        viewModel.progressObservable.observe(this, {
+        viewModel.progressObservable.observe(this,{
             it?.let {
                 toggleProgress(it)
             }
