@@ -10,6 +10,7 @@ import kotlinx.coroutines.Job
 object ViewModelDispatcher {
     @VisibleForTesting
     var dispatcher: CoroutineDispatcher = Dispatchers.IO
+    var uiDispatcher: CoroutineDispatcher = Dispatchers.Main
 }
 
 abstract class BaseViewModel : ViewModel() {

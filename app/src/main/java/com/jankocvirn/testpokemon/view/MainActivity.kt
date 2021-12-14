@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         })
         viewModel.pokemonObservable.observe(this, {
             it?.let {
-                populateUi(it)
+                populateUi(it.getContentIfNotHandled())
             }
         })
     }
@@ -55,6 +55,7 @@ class MainActivity : AppCompatActivity() {
     private fun showError(show: Boolean) {
         when (show) {
             true -> toast(getString(R.string.general_error))
+            false -> {}
         }
     }
 
@@ -62,15 +63,17 @@ class MainActivity : AppCompatActivity() {
         binding.progress.isVisible = show
     }
 
-    private fun populateUi(pokemon: Pokemon) {
-        binding.txtName.text = pokemon.name
-        binding.imgFront.loadImage(pokemon.frontImage)
-        binding.imgBack.loadImage(pokemon.backImage)
-        pokemon.moves?.let {
-            populateMoves(it)
-        }
-        pokemon.stats?.let {
-            populateStats(it)
+    private fun populateUi(pokemon: Pokemon?) {
+        pokemon?.let { item ->
+            binding.txtName.text = item.name
+            binding.imgFront.loadImage(item.frontImage)
+            binding.imgBack.loadImage(item.backImage)
+            pokemon.moves?.let {
+                populateMoves(it)
+            }
+            pokemon.stats?.let {
+                populateStats(it)
+            }
         }
     }
 
